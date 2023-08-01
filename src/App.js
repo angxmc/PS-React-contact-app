@@ -1,8 +1,8 @@
 
-
 // =Step 1: import
 import Header from './components/Header';
 import Navbar from './components/Navbar';
+import Main from './components/Main'
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
       {/* step 2: call the function */}
       <Navbar/>
       <Header title='Contacts App'/>
+      <Main/>
     </div>
   );
 }

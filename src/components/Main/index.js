@@ -1,12 +1,14 @@
+import ContactsList from '../ContactsList';
+import styles from './Main.module.css'
 function Main() {
   return (
-    <main>
+    <main className={styles.container}>
 
-      <section>
-        <h2>Contact List</h2>
+      <section className={styles.sec1}>
+        <ContactsList/>
       </section>
 
-      <section>
+      <section className={styles.sec2}>
         <h2>Contact Form</h2>
       </section>
 
