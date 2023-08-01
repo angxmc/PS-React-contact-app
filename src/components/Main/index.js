@@ -5,6 +5,7 @@ import styles from "./Main.module.css";
 function Main() {
   // = State lifted to here, Main
   const [contacts, setContacts] = useState(null);
+  
   useEffect(() => {
     
     const fetchData = async () => {
@@ -14,6 +15,10 @@ function Main() {
     };
     fetchData();
   }, []);
+
+  const addNewContact = (newContact)=>{
+    setContacts([...contacts, newContact])
+  }
   return (
     <main className={styles.container}>
       <section className={styles.sec1}>
@@ -21,7 +26,7 @@ function Main() {
       </section>
 
       <section className={styles.sec2}>
-        <ContactForm />
+        <ContactForm addNewContact={addNewContact}/>
       </section>
     </main>
   );
