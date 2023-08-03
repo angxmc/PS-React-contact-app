@@ -38,7 +38,7 @@ function ContactForm() {
     };
     addNewContact(newContact); */
     const newContact = { ...formData, id: new Date() };
-    addNewContact(formData);
+    addNewContact(newContact);
     setFormData({
       name: "",
       email: "",
