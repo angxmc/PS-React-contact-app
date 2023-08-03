@@ -8,9 +8,12 @@
     - attach the created reference to the JSX tag
 */
 
-import { useRef, useState } from "react";
-function ContactForm(props) {
-  const { addNewContact } = props;
+import { useRef, useState, useContext } from "react";
+import { ContactsContext } from "../../context/contactsContext";
+function ContactForm() {
+  //we are using the ContactsContext
+  const contactsCtx = useContext(ContactsContext);
+  const { addNewContact } = contactsCtx;
 
   //>> use this every time when we create a form for user input
   // - using state to store the new input variable, ot hold formData.
@@ -34,6 +37,7 @@ function ContactForm(props) {
       phone: phoneRef.current.value,
     };
     addNewContact(newContact); */
+    const newContact = { ...formData, id: new Date() };
     addNewContact(formData);
     setFormData({
       name: "",

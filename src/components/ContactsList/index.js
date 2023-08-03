@@ -1,8 +1,12 @@
 // import { useState, useEffect } from "react";
+import { useContext } from "react";
+import { ContactsContext } from "../../context/contactsContext";
 import ContactItem from "../ContactItem";
 // this is rendered under the Main component
-function ContactsList(props) {
-  const {contacts} = props;
+function ContactsList() {
+  const contactsCtx = useContext(ContactsContext);
+  
+  const {contacts} = contactsCtx;
   // == State ============
   // const [contacts, setContacts] = useState(null);
 
